@@ -16,7 +16,7 @@ _fish · waybar · rofi · kitty · hyprlock_
 
 ## Preview
 
-Feature
+![screenshot](assets/screenshot-01.png)
 
 ## ✨ What's inside
 
