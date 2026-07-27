@@ -1,28 +1,84 @@
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+
+    // renders the actual wallpaper as the logo (kitty graphics protocol,
+    // falls back automatically if the terminal doesn't support it)
     "logo": {
-        "type": "small",
-        "padding": { "top": 1, "right": 2 }
+        "type": "auto",
+        "source": "~/.config/hypr/wallpapers/default.png",
+        "width": 26,
+        "height": 14,
+        "padding": {
+            "top": 1,
+            "right": 3
+        }
     },
+
     "display": {
-        "separator": "  "
+        "separator": " ",
+        "color": {
+            "keys": "#8a90f0",
+            "title": "#e8a0c8",
+            "separator": "#47475c"
+        },
+        "key": {
+            "width": 11
+        },
+        "percent": {
+            "type": ["num", "bar"],
+            "colors": {
+                "green": "#7cbd82",
+                "yellow": "#e8c48a",
+                "red": "#f0645c"
+            }
+        }
     },
+
     "modules": [
-        "title",
+        {
+            "type": "title",
+            "format": "{user-name}@{host-name}"
+        },
         "separator",
-        "os",
-        "host",
-        "kernel",
-        "uptime",
-        "packages",
-        "shell",
-        "wm",
-        "terminal",
-        "cpu",
-        "gpu",
-        "memory",
-        "disk",
         "break",
-        "colors"
+
+        { "type": "os",       "key": " OS",       "keyColor": "#8a90f0" },
+        { "type": "kernel",   "key": " Kernel",   "keyColor": "#8a90f0" },
+        { "type": "uptime",   "key": "󰅐 Uptime",   "keyColor": "#8a90f0" },
+        { "type": "packages", "key": "󰏖 Packages", "keyColor": "#8a90f0" },
+
+        "break",
+
+        { "type": "wm",       "key": "󱂬 WM",       "keyColor": "#e8a0c8" },
+        { "type": "shell",    "key": " Shell",    "keyColor": "#e8a0c8" },
+        { "type": "terminal", "key": " Terminal", "keyColor": "#e8a0c8" },
+        { "type": "font",     "key": " Font",     "keyColor": "#e8a0c8" },
+
+        "break",
+
+        { "type": "cpu",    "key": "󰍛 CPU",    "keyColor": "#35a8b4" },
+        { "type": "gpu",    "key": "󰢮 GPU",    "keyColor": "#35a8b4" },
+        {
+            "type": "memory",
+            "key": " Memory",
+            "keyColor": "#35a8b4",
+            "format": "{used} / {total} ({percentage})"
+        },
+        {
+            "type": "disk",
+            "key": "󰋊 Disk",
+            "keyColor": "#35a8b4",
+            "folders": "/",
+            "format": "{used} / {total} ({percentage})"
+        },
+
+        "break",
+        {
+            "type": "colors",
+            "key": " Palette",
+            "keyColor": "#7cbd82",
+            "symbol": "circle",
+            "paddingLeft": 1
+        }
     ]
 }
