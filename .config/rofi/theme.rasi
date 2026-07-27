@@ -1,11 +1,11 @@
 * {
-    base:       #1a1b26f0;
-    mantle:     #14141fee;
-    surface0:   #232436ff;
-    surface1:   #2c2d42ff;
-    text:       #c8cbe0ff;
-    subtext:    #9699b8ff;
-    lavender:   #8aa6f7ff;
+    base:       #101014f0;
+    mantle:     #0a0a0cee;
+    surface0:   #1c1c24ff;
+    surface1:   #272733ff;
+    text:       #e8e8ecff;
+    subtext:    #a3a3b0ff;
+    lavender:   #8a90f0ff;
 
     background-color: transparent;
     text-color: @text;

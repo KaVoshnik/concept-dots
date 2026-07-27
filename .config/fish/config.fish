@@ -18,17 +18,17 @@ if status is-interactive
     set -g fish_autosuggestion_enabled 1
 
     # ── colors (matches concept palette) ──
-    set -g fish_color_normal        c8cbe0
-    set -g fish_color_command       8aa6f7
-    set -g fish_color_param         9699b8
-    set -g fish_color_keyword       f2b8c6
+    set -g fish_color_normal        e8e8ec
+    set -g fish_color_command       8a90f0
+    set -g fish_color_param         a3a3b0
+    set -g fish_color_keyword       e8a0c8
     set -g fish_color_quote         e8c48a
-    set -g fish_color_redirection   c8cbe0
-    set -g fish_color_end           8aa6f7
-    set -g fish_color_error         e37c88
-    set -g fish_color_comment       6c6f93
-    set -g fish_color_autosuggestion 4b4d6e
-    set -g fish_color_cwd           9fd9a8
+    set -g fish_color_redirection   e8e8ec
+    set -g fish_color_end           8a90f0
+    set -g fish_color_error         f0645c
+    set -g fish_color_comment       72758c
+    set -g fish_color_autosuggestion 47475c
+    set -g fish_color_cwd           7cbd82
 end
 
 # ── PATH ──

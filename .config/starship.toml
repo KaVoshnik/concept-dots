@@ -1,37 +1,37 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](fg:#8aa6f7)[  $directory]($style_dir)[](bg:#232436 fg:#8aa6f7)$git_branch$git_status[](fg:#232436)
+[](fg:#8a90f0)[  $directory]($style_dir)[](bg:#1c1c24 fg:#8a90f0)$git_branch$git_status[](fg:#1c1c24)
 $character"""
 
 add_newline = true
 
 [directory]
-style = "bg:#8aa6f7 fg:#14141f bold"
+style = "bg:#8a90f0 fg:#0a0a0c bold"
 truncation_length = 3
 truncate_to_repo = true
 
 [git_branch]
 symbol = " "
-style = "bg:#232436 fg:#c8cbe0"
+style = "bg:#1c1c24 fg:#e8e8ec"
 format = "[ $symbol$branch ]($style)"
 
 [git_status]
-style = "bg:#232436 fg:#e8c48a"
+style = "bg:#1c1c24 fg:#e8c48a"
 format = '[$all_status$ahead_behind ]($style)'
 
 [character]
-success_symbol = "[❯](bold #9fd9a8)"
-error_symbol = "[❯](bold #e37c88)"
-vicmd_symbol = "[❮](bold #8aa6f7)"
+success_symbol = "[❯](bold #7cbd82)"
+error_symbol = "[❯](bold #f0645c)"
+vicmd_symbol = "[❮](bold #8a90f0)"
 
 [cmd_duration]
 min_time = 2000
-format = "took [$duration](#9699b8) "
+format = "took [$duration](#a3a3b0) "
 
 [nodejs]
 symbol = " "
-format = "[$symbol($version )](#9fd9a8)"
+format = "[$symbol($version )](#7cbd82)"
 
 [python]
 symbol = " "
@@ -39,4 +39,4 @@ format = "[$symbol($version )](#e8c48a)"
 
 [rust]
 symbol = " "
-format = "[$symbol($version )](#eab087)"
+format = "[$symbol($version )](#f0a878)"
