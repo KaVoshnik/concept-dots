@@ -1,0 +1,73 @@
+* {
+    base:       #1a1b26f0;
+    mantle:     #14141fee;
+    surface0:   #232436ff;
+    surface1:   #2c2d42ff;
+    text:       #c8cbe0ff;
+    subtext:    #9699b8ff;
+    lavender:   #8aa6f7ff;
+
+    background-color: transparent;
+    text-color: @text;
+}
+
+window {
+    width: 32%;
+    background-color: @mantle;
+    border: 2px;
+    border-color: @surface1;
+    border-radius: 14px;
+    padding: 10px;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+    spacing: 10px;
+}
+
+inputbar {
+    background-color: @surface0;
+    border-radius: 10px;
+    padding: 10px 14px;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    text-color: @lavender;
+}
+
+entry {
+    placeholder: "Search...";
+    placeholder-color: @subtext;
+    text-color: @text;
+}
+
+listview {
+    lines: 8;
+    scrollbar: false;
+    spacing: 4px;
+    padding: 4px 0;
+}
+
+element {
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+
+element normal.normal {
+    text-color: @subtext;
+}
+
+element selected.normal {
+    background-color: @surface1;
+    text-color: @lavender;
+}
+
+element-icon {
+    size: 20px;
+    vertical-align: 0.5;
+}
+
+element-text {
+    vertical-align: 0.5;
+}

@@ -1,0 +1,8 @@
+# local wallpapers you don't want to publish
+wallpapers/*
+!wallpapers/.gitkeep
+.config/hypr/wallpapers/*
+!.config/hypr/wallpapers/.gitkeep
+
+*.swp
+.DS_Store
