@@ -3,7 +3,7 @@
 #  Installs Elegant-grub2-themes
 #  (https://github.com/vinceliuice/Elegant-grub2-themes)
 #
-#  Defaults: forest / window / left / dark / 1080p
+#  Defaults: forest / window / left / light / 1080p
 #  Edit the flags below to change theme, style, side, color, or resolution.
 #  Full option list: https://github.com/vinceliuice/Elegant-grub2-themes#usage
 #
@@ -28,8 +28,8 @@ trap 'rm -rf "$tmp"' EXIT
 info "Cloning Elegant-grub2-themes..."
 git clone --depth=1 https://github.com/vinceliuice/Elegant-grub2-themes.git "$tmp/Elegant-grub2-themes"
 
-info "Installing theme (forest / window / left / dark / 1080p)..."
-(cd "$tmp/Elegant-grub2-themes" && sudo ./install.sh -t forest -p window -i left -c dark -s 1080p)
+info "Installing theme (forest / window / left / light / 1080p)..."
+(cd "$tmp/Elegant-grub2-themes" && sudo ./install.sh -t forest -p window -i left -c light -s 1080p)
 
 ok "Elegant GRUB2 theme installed. It will show up on next reboot."
 echo "Want a different variant? Re-run manually, e.g.:"
