@@ -52,6 +52,7 @@ fi
 # ── package list ──
 PACMAN_PKGS=(
     hyprland hyprpaper hypridle hyprlock
+    sddm qt6-svg qt6-declarative qt6-virtualkeyboard qt6-multimedia-ffmpeg qt6-imageformats
     waybar rofi-wayland dunst wlogout
     kitty fish starship fastfetch
     grim slurp wl-clipboard cliphist hyprpicker
@@ -75,6 +76,17 @@ ok "Official packages installed"
 info "Installing AUR packages..."
 paru -S --needed --noconfirm "${AUR_PKGS[@]}"
 ok "AUR packages installed"
+
+# ── display manager ──
+# Without this, the system drops to a plain TTY login instead of a
+# graphical greeter, and Hyprland never gets launched.
+if systemctl is-enabled --quiet sddm.service 2>/dev/null; then
+    ok "sddm.service already enabled"
+else
+    info "Enabling sddm.service..."
+    sudo systemctl enable sddm.service
+    ok "sddm.service enabled"
+fi
 
 # ── backup existing config ──
 if [[ -d "$CONFIG_DIR" ]]; then
@@ -118,6 +130,20 @@ if [[ "$SHELL" != *fish* ]]; then
     ok "Default shell changed to fish (re-login to apply)"
 fi
 
+# ── optional: SilentSDDM login theme ──
 echo
-ok "All done! Reboot or re-login, then select Hyprland at your display manager."
+read -rp "Install SilentSDDM login theme with the 'silvia' preset? [y/N] " reply
+if [[ "$reply" =~ ^[Yy]$ ]]; then
+    bash "$REPO_DIR/scripts/install-sddm-theme.sh" silvia
+fi
+
+# ── optional: Elegant GRUB2 theme ──
+echo
+read -rp "Install Elegant GRUB2 bootloader theme? [y/N] " reply
+if [[ "$reply" =~ ^[Yy]$ ]]; then
+    bash "$REPO_DIR/scripts/install-grub-theme.sh"
+fi
+
+echo
+ok "All done! Reboot, then pick the 'Hyprland' session on the login screen."
 warn "Don't forget to edit .config/hypr/monitors.conf for your screen setup."

@@ -79,6 +79,18 @@ After it finishes: **reboot or re-login**, then pick Hyprland at your display/lo
 | `SUPER + SHIFT + S` | Screenshot (region) |
 | `SUPER + 1-0`       | Switch workspace    |
 
+## 🎁 Optional extras
+
+`install.sh` will ask at the end whether you want these — both can also be run standalone any time:
+
+```bash
+./scripts/install-sddm-theme.sh silvia   # SilentSDDM login theme, "silvia" preset
+./scripts/install-grub-theme.sh          # Elegant GRUB2 bootloader theme
+```
+
+- **[SilentSDDM](https://github.com/uiriansan/SilentSDDM)** — a polished SDDM login theme. Other bundled presets: `default`, `rei`, `ken`, `everforest`, `catppuccin-latte/frappe/macchiato/mocha`, `nord`.
+- **[Elegant-grub2-themes](https://github.com/vinceliuice/Elegant-grub2-themes)** — a GRUB bootloader theme. Skipped automatically if your system doesn't use GRUB (e.g. systemd-boot). Default install is `forest / window / left / dark / 1080p` — edit the flags inside the script for other variants.
+
 ## 🗂️ Structure
 
 ```
@@ -94,6 +106,9 @@ concept-dots/
 │   ├── dunst/
 │   ├── wlogout/
 │   └── fastfetch/
+├── scripts/
+│   ├── install-sddm-theme.sh
+│   └── install-grub-theme.sh
 ├── wallpapers/
 └── assets/               # screenshots for this README
 ```

@@ -13,7 +13,6 @@ truncate_to_repo = true
 
 [git_branch]
 symbol = " "
-style_dir = "bg:#8aa6f7 fg:#14141f"
 style = "bg:#232436 fg:#c8cbe0"
 format = "[ $symbol$branch ]($style)"
 
