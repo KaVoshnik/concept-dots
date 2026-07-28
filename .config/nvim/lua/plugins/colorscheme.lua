@@ -16,6 +16,7 @@ return {
             floats = "dark",
         },
         on_colors = function(colors)
+            -- BEGIN CONCEPT-THEME
             colors.bg = "#101014"
             colors.bg_dark = "#0a0a0c"
             colors.bg_float = "#0a0a0c"
@@ -47,6 +48,7 @@ return {
             colors.teal = "#35a8b4"
 
             colors.terminal_black = "#1c1c24"
+            -- END CONCEPT-THEME
         end,
     },
     config = function(_, opts)

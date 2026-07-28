@@ -1,4 +1,4 @@
-/* ─── concept palette ─── */
+/* BEGIN CONCEPT-THEME */
 @define-color base       #101014;
 @define-color mantle     #0a0a0c;
 @define-color surface0   #1c1c24;
@@ -13,6 +13,7 @@
 @define-color green      #7cbd82;
 @define-color yellow     #e8c48a;
 @define-color cyan       #35a8b4;
+/* END CONCEPT-THEME */
 
 * {
     font-family: "JetBrainsMono Nerd Font", sans-serif;

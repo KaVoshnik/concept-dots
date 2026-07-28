@@ -38,7 +38,7 @@ fish_add_path $HOME/.cargo/bin
 # ── env ──
 set -gx EDITOR nvim
 set -gx VISUAL nvim
-set -gx BROWSER firefox
+set -gx BROWSER zen-browser
 set -gx TERM xterm-256color
 
 # ── aliases (aka "the zshrc habits") ──

@@ -51,7 +51,7 @@ fi
 
 # ── package list ──
 PACMAN_PKGS=(
-    hyprland hyprpaper hypridle hyprlock
+    hyprland hypridle hyprlock
     sddm qt6-svg qt6-declarative qt6-virtualkeyboard qt6-multimedia-ffmpeg qt6-imageformats
     waybar rofi-wayland dunst wlogout
     kitty fish starship fastfetch
@@ -65,11 +65,15 @@ PACMAN_PKGS=(
     qt5ct qt6ct kvantum kvantum-qt5 nwg-look
     ttf-inter
     neovim nodejs npm unzip lazygit
+    swww
 )
 
 AUR_PKGS=(
     bibata-cursor-theme-bin
     adw-gtk-theme
+    zen-browser-bin
+    visual-studio-code-bin
+    quickshell
 )
 
 info "Installing official repo packages..."
@@ -95,7 +99,7 @@ fi
 if [[ -d "$CONFIG_DIR" ]]; then
     info "Backing up existing ~/.config to $BACKUP_DIR"
     mkdir -p "$BACKUP_DIR"
-    for dir in hypr waybar rofi kitty fish dunst wlogout fastfetch nvim gtk-3.0 gtk-4.0 qt5ct qt6ct Kvantum starship.toml; do
+    for dir in hypr waybar rofi kitty fish dunst wlogout fastfetch nvim gtk-3.0 gtk-4.0 qt5ct qt6ct Kvantum quickshell starship.toml; do
         if [[ -e "$CONFIG_DIR/$dir" ]]; then
             mv "$CONFIG_DIR/$dir" "$BACKUP_DIR/"
         fi
@@ -106,10 +110,15 @@ fi
 # ── symlink configs ──
 info "Linking configs into ~/.config..."
 mkdir -p "$CONFIG_DIR"
-for dir in hypr waybar rofi kitty fish dunst wlogout fastfetch nvim gtk-3.0 gtk-4.0 qt5ct qt6ct Kvantum; do
+for dir in hypr waybar rofi kitty fish dunst wlogout fastfetch nvim gtk-3.0 gtk-4.0 qt5ct qt6ct Kvantum quickshell; do
     ln -sfn "$REPO_DIR/.config/$dir" "$CONFIG_DIR/$dir"
 done
 ln -sf "$REPO_DIR/.config/starship.toml" "$CONFIG_DIR/starship.toml"
+
+# fixed location for scripts/, so the concept-panel QML always finds them
+# regardless of where this repo was cloned
+mkdir -p "$CONFIG_DIR/concept-dots"
+ln -sfn "$REPO_DIR/scripts" "$CONFIG_DIR/concept-dots/scripts"
 ok "Configs linked"
 
 # ── wallpapers ──

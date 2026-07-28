@@ -4,6 +4,7 @@ wallpapers/*
 .config/hypr/wallpapers/*
 !.config/hypr/wallpapers/.gitkeep
 !.config/hypr/wallpapers/default.png
+!.config/hypr/wallpapers/current.png
 
 *.swp
 .DS_Store

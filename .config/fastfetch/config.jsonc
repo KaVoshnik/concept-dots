@@ -5,7 +5,7 @@
     // falls back automatically if the terminal doesn't support it)
     "logo": {
         "type": "auto",
-        "source": "~/.config/hypr/wallpapers/default.png",
+        "source": "~/.config/hypr/wallpapers/current.png",
         "width": 26,
         "height": 14,
         "padding": {
@@ -17,9 +17,9 @@
     "display": {
         "separator": " ",
         "color": {
-            "keys": "#8a90f0",
-            "title": "#e8a0c8",
-            "separator": "#47475c"
+            "keys": "#8a90f0",  // @concept:lavender
+            "title": "#e8a0c8",  // @concept:rosewater
+            "separator": "#47475c"  // @concept:overlay
         },
         "key": {
             "width": 11
@@ -27,9 +27,9 @@
         "percent": {
             "type": ["num", "bar"],
             "colors": {
-                "green": "#7cbd82",
-                "yellow": "#e8c48a",
-                "red": "#f0645c"
+                "green": "#7cbd82",  // @concept:green
+                "yellow": "#e8c48a",  // @concept:yellow
+                "red": "#f0645c"  // @concept:red
             }
         }
     },
@@ -42,41 +42,41 @@
         "separator",
         "break",
 
-        { "type": "os",       "key": " OS",       "keyColor": "#8a90f0" },
-        { "type": "kernel",   "key": " Kernel",   "keyColor": "#8a90f0" },
-        { "type": "uptime",   "key": "󰅐 Uptime",   "keyColor": "#8a90f0" },
-        { "type": "packages", "key": "󰏖 Packages", "keyColor": "#8a90f0" },
+        { "type": "os",       "key": " OS",       "keyColor": "#8a90f0" },  // @concept:lavender
+        { "type": "kernel",   "key": " Kernel",   "keyColor": "#8a90f0" },  // @concept:lavender
+        { "type": "uptime",   "key": "󰅐 Uptime",   "keyColor": "#8a90f0" },  // @concept:lavender
+        { "type": "packages", "key": "󰏖 Packages", "keyColor": "#8a90f0" },  // @concept:lavender
 
         "break",
 
-        { "type": "wm",       "key": "󱂬 WM",       "keyColor": "#e8a0c8" },
-        { "type": "shell",    "key": " Shell",    "keyColor": "#e8a0c8" },
-        { "type": "terminal", "key": " Terminal", "keyColor": "#e8a0c8" },
-        { "type": "font",     "key": " Font",     "keyColor": "#e8a0c8" },
+        { "type": "wm",       "key": "󱂬 WM",       "keyColor": "#e8a0c8" },  // @concept:rosewater
+        { "type": "shell",    "key": " Shell",    "keyColor": "#e8a0c8" },  // @concept:rosewater
+        { "type": "terminal", "key": " Terminal", "keyColor": "#e8a0c8" },  // @concept:rosewater
+        { "type": "font",     "key": " Font",     "keyColor": "#e8a0c8" },  // @concept:rosewater
 
         "break",
 
-        { "type": "cpu",    "key": "󰍛 CPU",    "keyColor": "#35a8b4" },
-        { "type": "gpu",    "key": "󰢮 GPU",    "keyColor": "#35a8b4" },
+        { "type": "cpu",    "key": "󰍛 CPU",    "keyColor": "#35a8b4" },  // @concept:cyan
+        { "type": "gpu",    "key": "󰢮 GPU",    "keyColor": "#35a8b4" },  // @concept:cyan
         {
             "type": "memory",
             "key": " Memory",
-            "keyColor": "#35a8b4",
-            "format": "{used} / {total} ({percentage})"
+            "keyColor": "#35a8b4",  // @concept:cyan
+            "format": "{1} / {2} ({3})"
         },
         {
             "type": "disk",
             "key": "󰋊 Disk",
-            "keyColor": "#35a8b4",
+            "keyColor": "#35a8b4",  // @concept:cyan
             "folders": "/",
-            "format": "{used} / {total} ({percentage})"
+            "format": "{1} / {2} ({3})"
         },
 
         "break",
         {
             "type": "colors",
             "key": " Palette",
-            "keyColor": "#7cbd82",
+            "keyColor": "#7cbd82",  // @concept:green
             "symbol": "circle",
             "paddingLeft": 1
         }

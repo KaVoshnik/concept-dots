@@ -1,42 +1,44 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
+# BEGIN CONCEPT-THEME-FORMAT
 format = """
 [](fg:#8a90f0)[  $directory]($style_dir)[](bg:#1c1c24 fg:#8a90f0)$git_branch$git_status[](fg:#1c1c24)
 $character"""
+# END CONCEPT-THEME-FORMAT
 
 add_newline = true
 
 [directory]
-style = "bg:#8a90f0 fg:#0a0a0c bold"
+style = "bg:#8a90f0 fg:#0a0a0c bold" # @concept:lavender,mantle
 truncation_length = 3
 truncate_to_repo = true
 
 [git_branch]
 symbol = " "
-style = "bg:#1c1c24 fg:#e8e8ec"
+style = "bg:#1c1c24 fg:#e8e8ec" # @concept:surface0,text
 format = "[ $symbol$branch ]($style)"
 
 [git_status]
-style = "bg:#1c1c24 fg:#e8c48a"
+style = "bg:#1c1c24 fg:#e8c48a" # @concept:surface0,yellow
 format = '[$all_status$ahead_behind ]($style)'
 
 [character]
-success_symbol = "[❯](bold #7cbd82)"
-error_symbol = "[❯](bold #f0645c)"
-vicmd_symbol = "[❮](bold #8a90f0)"
+success_symbol = "[❯](bold #7cbd82)" # @concept:green
+error_symbol = "[❯](bold #f0645c)" # @concept:red
+vicmd_symbol = "[❮](bold #8a90f0)" # @concept:lavender
 
 [cmd_duration]
 min_time = 2000
-format = "took [$duration](#a3a3b0) "
+format = "took [$duration](#a3a3b0) " # @concept:subtext
 
 [nodejs]
 symbol = " "
-format = "[$symbol($version )](#7cbd82)"
+format = "[$symbol($version )](#7cbd82)" # @concept:green
 
 [python]
 symbol = " "
-format = "[$symbol($version )](#e8c48a)"
+format = "[$symbol($version )](#e8c48a)" # @concept:yellow
 
 [rust]
 symbol = " "
-format = "[$symbol($version )](#f0a878)"
+format = "[$symbol($version )](#f0a878)" # @concept:peach

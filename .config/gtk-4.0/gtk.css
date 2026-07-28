@@ -1,4 +1,4 @@
-/* accent color override for libadwaita apps — matches concept palette */
+/* BEGIN CONCEPT-THEME */
 @define-color accent_color #8a90f0;
 @define-color accent_bg_color #8a90f0;
 @define-color accent_fg_color #0a0a0c;
@@ -9,3 +9,4 @@
 @define-color view_fg_color #e8e8ec;
 @define-color headerbar_bg_color #0a0a0c;
 @define-color headerbar_fg_color #e8e8ec;
+/* END CONCEPT-THEME */

@@ -20,7 +20,7 @@
     padding = 12
     horizontal_padding = 12
     frame_width = 2
-    frame_color = "#272733"
+    frame_color = "#272733" # @concept:surface1
     separator_color = frame
     sort = yes
     idle_threshold = 120
@@ -47,17 +47,17 @@
     mouse_right_click = close_all
 
 [urgency_low]
-    background = "#101014"
-    foreground = "#a3a3b0"
+    background = "#101014" # @concept:base
+    foreground = "#a3a3b0" # @concept:subtext
     timeout = 5
 
 [urgency_normal]
-    background = "#101014"
-    foreground = "#e8e8ec"
+    background = "#101014" # @concept:base
+    foreground = "#e8e8ec" # @concept:text
     timeout = 8
 
 [urgency_critical]
-    background = "#101014"
-    foreground = "#f0645c"
-    frame_color = "#f0645c"
+    background = "#101014" # @concept:base
+    foreground = "#f0645c" # @concept:red
+    frame_color = "#f0645c" # @concept:red
     timeout = 0
