@@ -63,7 +63,7 @@ PACMAN_PKGS=(
     nautilus pavucontrol
     xdg-desktop-portal-hyprland
     qt5ct qt6ct kvantum kvantum-qt5 nwg-look
-    ttf-inter
+    inter-font
     neovim nodejs npm unzip lazygit
     swww
 )
@@ -77,11 +77,31 @@ AUR_PKGS=(
 )
 
 info "Installing official repo packages..."
-sudo pacman -S --needed --noconfirm "${PACMAN_PKGS[@]}"
+if ! sudo pacman -S --needed --noconfirm "${PACMAN_PKGS[@]}"; then
+    warn "Batch install failed (likely one bad package name) — retrying one by one..."
+    failed=()
+    for pkg in "${PACMAN_PKGS[@]}"; do
+        sudo pacman -S --needed --noconfirm "$pkg" || failed+=("$pkg")
+    done
+    if [[ ${#failed[@]} -gt 0 ]]; then
+        warn "Failed to install: ${failed[*]}"
+        warn "Check package names above — the rest installed fine."
+    fi
+fi
 ok "Official packages installed"
 
 info "Installing AUR packages..."
-paru -S --needed --noconfirm "${AUR_PKGS[@]}"
+if ! paru -S --needed --noconfirm "${AUR_PKGS[@]}"; then
+    warn "Batch install failed (likely one bad package name) — retrying one by one..."
+    failed=()
+    for pkg in "${AUR_PKGS[@]}"; do
+        paru -S --needed --noconfirm "$pkg" || failed+=("$pkg")
+    done
+    if [[ ${#failed[@]} -gt 0 ]]; then
+        warn "Failed to install: ${failed[*]}"
+        warn "Check package names above — the rest installed fine."
+    fi
+fi
 ok "AUR packages installed"
 
 # ── display manager ──
