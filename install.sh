@@ -65,7 +65,8 @@ PACMAN_PKGS=(
     qt5ct qt6ct kvantum kvantum-qt5 nwg-look
     inter-font
     neovim nodejs npm unzip lazygit
-    swww
+    awww  # formerly "swww" — upstream renamed the project; init-wallpaper.sh
+          # and apply-wallpaper.sh auto-detect whichever one is installed
 )
 
 AUR_PKGS=(

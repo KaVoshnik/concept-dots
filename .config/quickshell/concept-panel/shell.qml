@@ -1,7 +1,7 @@
 // ~/.config/quickshell/concept-panel/shell.qml
 //
 // A small settings panel for concept-dots: pick a wallpaper (live-applied
-// via swww) or a theme (regenerates colors across every themed config via
+// via awww/swww) or a theme (regenerates colors across every themed config via
 // scripts/apply-theme.py).
 //
 // Toggle with SUPER+S (bound in hypr/keybinds.conf to `qs -c concept-panel
