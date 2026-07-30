@@ -66,6 +66,7 @@ ShellRoot {
         }
 
         function applyWallpaper(path) {
+            if (wallpaperApplier.running) return // ignore double-clicks mid-transition
             wallpaperApplier.command = ["bash", scriptsDir + "/apply-wallpaper.sh", path]
             wallpaperApplier.running = true
         }
