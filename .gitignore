@@ -8,3 +8,4 @@ wallpapers/*
 
 *.swp
 .DS_Store
+.config/hypr/.current-theme

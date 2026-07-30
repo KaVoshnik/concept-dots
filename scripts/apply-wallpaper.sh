@@ -20,8 +20,14 @@ TARGET="$(realpath "$1")"
 
 if ! pgrep -x swww-daemon >/dev/null; then
     swww-daemon &
-    sleep 0.5
 fi
+
+for _ in $(seq 1 25); do
+    if swww query >/dev/null 2>&1; then
+        break
+    fi
+    sleep 0.2
+done
 
 swww img "$TARGET" \
     --transition-type wipe \

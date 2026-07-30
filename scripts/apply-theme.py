@@ -107,10 +107,25 @@ def apply_theme(name: str):
     replace_block(CONFIG / "waybar/style.css", body)
 
     # rofi/theme.rasi
-    alpha = {"base": "f0", "mantle": "ee", "surface0": "ff", "surface1": "ff", "text": "ff", "subtext": "ff", "lavender": "ff"}
-    lines = []
-    for k, a in alpha.items():
-        lines.append(f"    {k+':':<12}#{t[k]}{a}")
+    # NOTE: deliberately NOT using 8-digit #RRGGBBAA hex — some rofi/
+    # rofi-wayland versions choke on it with a "invalid property value"
+    # parse error for anything other than a fully-opaque "ff" suffix.
+    # rgba() is unambiguous and works everywhere.
+    def hex_to_rgba(hex_color, alpha):
+        r = int(hex_color[0:2], 16)
+        g = int(hex_color[2:4], 16)
+        b = int(hex_color[4:6], 16)
+        return f"rgba({r}, {g}, {b}, {alpha})"
+
+    lines = [
+        f"    base:       {hex_to_rgba(t['base'], 0.94)};",
+        f"    mantle:     {hex_to_rgba(t['mantle'], 0.93)};",
+        f"    surface0:   #{t['surface0']};",
+        f"    surface1:   #{t['surface1']};",
+        f"    text:       #{t['text']};",
+        f"    subtext:    #{t['subtext']};",
+        f"    lavender:   #{t['lavender']};",
+    ]
     replace_block(CONFIG / "rofi/theme.rasi", "\n".join(lines))
 
     # kitty/kitty.conf

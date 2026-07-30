@@ -1,12 +1,12 @@
 * {
     /* BEGIN CONCEPT-THEME */
-    base:       #101014f0;
-    mantle:     #0a0a0cee;
-    surface0:   #1c1c24ff;
-    surface1:   #272733ff;
-    text:       #e8e8ecff;
-    subtext:    #a3a3b0ff;
-    lavender:   #8a90f0ff;
+    base:       rgba(16, 16, 20, 0.94);
+    mantle:     rgba(10, 10, 12, 0.93);
+    surface0:   #1c1c24;
+    surface1:   #272733;
+    text:       #e8e8ec;
+    subtext:    #a3a3b0;
+    lavender:   #8a90f0;
     /* END CONCEPT-THEME */
 
     background-color: transparent;
